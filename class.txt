@@ -1,0 +1,30 @@
+Class activity
+
+1. Create a Table Employees (Emp_ID, Emp_Name, Dept_ID) and Departments (Dept_ID, Dept_Name).
+
+2. Write an SQL query using INNER JOIN to list all employees and their department names.
+
+3. Write an SQL query using LEFT JOIN to list all employees, showing department names where available.
+
+4. Write an SQL query using RIGHT JOIN to list all departments and any employees in them.
+
+
+INNER:
+SELECT Employees.Emp_Name, Departments.Dept_Name
+FROM Employees
+INNER JOIN Departments
+ON Employees.Dept_ID = Departments.Dept_ID;
+
+
+LEFT:
+SELECT Employees.Emp_Name, Departments.Dept_Name
+FROM Employees
+LEFT JOIN Departments
+ON Employees.Dept_ID = Departments.Dept_ID;
+
+
+RIGHT:
+SELECT Departments.Dept_Name, Employees.Emp_Name
+FROM Employees
+RIGHT JOIN Departments
+ON Employees.Dept_ID = Departments.Dept_ID;
