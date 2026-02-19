@@ -1,0 +1,235 @@
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* BACKGROUND */
+.hero {
+    min-height: 100vh;
+    background: url("cinema.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* NAVBAR */
+.nav-links {
+    position: absolute;
+    top: 70px;
+    right: 60px;
+}
+
+.nav-links a {
+    color: #fff500;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #573f00;
+}
+
+/* PRICE CONTAINER */
+.price-container {
+    background-color: #5f4100;
+    padding: 40px;
+    border-radius: 25px;
+    width: 600px;
+    color: #ffe082;
+}
+
+.price-container h2 {
+    color: #ffffff;
+    margin-top: 0;
+    text-align: center;
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+/* PRICE TABLE */
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+.price-table th {
+    background-color: #c9a227;
+    color: #2e2200;
+    padding: 15px;
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.price-table td {
+    padding: 12px 15px;
+    border-bottom: 2px solid #c9a227;
+    font-size: 18px;
+}
+
+.price-table tr:last-child td {
+    border-bottom: none;
+}
+
+.price-table .price-value {
+    text-align: right;
+    font-weight: bold;
+    color: #fff500;
+}
+
+/* SECTION HEADERS */
+.section-header {
+    background-color: #7a5600;
+    color: #fff500;
+    padding: 10px 15px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* NOTES SECTION */
+.notes {
+    background-color: rgba(201, 162, 39, 0.2);
+    padding: 15px;
+    border-radius: 10px;
+    border: 2px solid #c9a227;
+    margin-top: 20px;
+}
+
+.notes h3 {
+    margin-top: 0;
+    color: #fff500;
+    font-size: 20px;
+}
+
+.notes ul {
+    margin: 10px 0;
+    padding-left: 25px;
+}
+
+.notes li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* BACK BUTTON */
+.btn-back {
+    width: 40%;
+    display: block;
+    margin: 20px auto 0;
+    padding: 12px;
+    background: #c9a227;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #2e2200;
+}
+
+.btn-back:hover {
+    background: #fff500;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+    <!-- NAVBAR -->
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="buyticket.html">Buy Ticket</a>
+        <a href="prices.html">Prices</a>
+        <a href="login.html">Login</a>
+    </div>
+
+    <div class="price-container">
+        <h2>Ticket Prices</h2>
+
+        <table class="price-table">
+            <tr>
+                <td colspan="2" class="section-header">Seat Types</td>
+            </tr>
+            <tr>
+                <td>Normal Seat</td>
+                <td class="price-value">RM 15.00</td>
+            </tr>
+            <tr>
+                <td>Premium Seat</td>
+                <td class="price-value">RM 25.00</td>
+            </tr>
+            <tr>
+                <td>Couple Seat</td>
+                <td class="price-value">RM 40.00</td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="section-header">Snacks & Beverages</td>
+            </tr>
+            <tr>
+                <td>Popcorn (Regular)</td>
+                <td class="price-value">RM 8.00</td>
+            </tr>
+            <tr>
+                <td>Popcorn (Large)</td>
+                <td class="price-value">RM 12.00</td>
+            </tr>
+            <tr>
+                <td>Nuggets (6 pcs)</td>
+                <td class="price-value">RM 10.00</td>
+            </tr>
+            <tr>
+                <td>Soft Drink (Regular)</td>
+                <td class="price-value">RM 6.00</td>
+            </tr>
+            <tr>
+                <td>Soft Drink (Large)</td>
+                <td class="price-value">RM 9.00</td>
+            </tr>
+
+            <tr>
+                <td colspan="2" class="section-header">Special Rates</td>
+            </tr>
+            <tr>
+                <td>Student Discount (with valid ID)</td>
+                <td class="price-value">-20%</td>
+            </tr>
+            <tr>
+                <td>Senior Citizen (60+ years)</td>
+                <td class="price-value">-30%</td>
+            </tr>
+            <tr>
+                <td>Tuesday Special (All Seats)</td>
+                <td class="price-value">-15%</td>
+            </tr>
+        </table>
+
+        <div class="notes">
+            <h3>Important Notes:</h3>
+            <ul>
+                <li>Prices are subject to 6% Service Tax</li>
+                <li>Children below 3 years old enter free (no seat)</li>
+                <li>Discounts cannot be combined</li>
+                <li>Special rates apply during non-peak hours only</li>
+                <li>Premium seats available on weekends and holidays</li>
+            </ul>
+        </div>
+
+        <button class="btn-back" onclick="window.location.href='home.html'">Back to Home</button>
+    </div>
+
+</div>
+
+</body>
+</html>

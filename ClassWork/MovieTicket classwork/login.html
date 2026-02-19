@@ -1,0 +1,265 @@
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* BACKGROUND */
+.hero {
+    height: 100vh;
+    background: url("cinema.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* NAVBAR */
+.nav-links {
+    position: absolute;
+    top: 70px;
+    right: 60px;
+}
+
+.nav-links a {
+    color: #fff500;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #573f00;
+}
+
+/* FORM CONTAINER */
+.form-container {
+    background-color: #5f4100;
+    padding: 40px;
+    border-radius: 25px;
+    width: 400px;
+    color: #d3a84c;
+}
+
+.form-container h2 {
+    color: #ffffff;
+    margin-top: 0;
+    text-align: center;
+    font-size: 28px;
+}
+
+.form-container label {
+    display: block;
+    color: #ffe082;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid #c9a227;
+    color: #d3a84c;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.form-container input:focus {
+    outline: none;
+    border-color: #fff500;
+}
+
+/* ERROR MESSAGES */
+.error-message {
+    color: #ff6b6b;
+    font-size: 14px;
+    margin-top: 5px;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.input-error {
+    border-color: #ff6b6b !important;
+}
+
+/* LOGIN BUTTON */
+.btn-login {
+    width: 100%;
+    margin-top: 25px;
+    padding: 12px;
+    background: #c9a227;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #2e2200;
+}
+
+.btn-login:hover {
+    background: #fff500;
+}
+
+/* LINKS */
+.form-links {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.form-links a {
+    color: #fff500;
+    text-decoration: none;
+}
+
+.form-links a:hover {
+    color: #ffe082;
+    text-decoration: underline;
+}
+
+/* SUCCESS MESSAGE */
+.success-message {
+    background-color: #4caf50;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    display: none;
+}
+
+.success-message.show {
+    display: block;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+    <!-- NAVBAR -->
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="buyticket.html">Buy Ticket</a>
+        <a href="prices.html">Prices</a>
+        <a href="login.html">Login</a>
+    </div>
+
+    <div class="form-container">
+        <h2>Login</h2>
+
+        <div id="successMessage" class="success-message">
+            Login successful! Redirecting...
+        </div>
+
+        <form id="loginForm" onsubmit="return validateLogin(event)">
+            
+            <label for="username">Username or Email:</label>
+            <input type="text" id="username" name="username" placeholder="Enter username or email">
+            <span id="usernameError" class="error-message">Username or email is required</span>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter password">
+            <span id="passwordError" class="error-message">Password must be at least 6 characters</span>
+
+            <button type="submit" class="btn-login">Login</button>
+        </form>
+
+        <div class="form-links">
+            <p>Don't have an account? <a href="#">Sign Up</a></p>
+            <p><a href="#">Forgot Password?</a></p>
+        </div>
+    </div>
+
+</div>
+
+<script>
+// VALIDATION FUNCTION
+function validateLogin(event) {
+    event.preventDefault();
+
+    const username = document.getElementById('username');
+    const password = document.getElementById('password');
+    const usernameError = document.getElementById('usernameError');
+    const passwordError = document.getElementById('passwordError');
+    const successMessage = document.getElementById('successMessage');
+
+    // resett
+    username.classList.remove('input-error');
+    password.classList.remove('input-error');
+    usernameError.classList.remove('show');
+    passwordError.classList.remove('show');
+    successMessage.classList.remove('show');
+
+    let isValid = true;
+
+    // user /email
+    if (username.value.trim() === '') {
+        username.classList.add('input-error');
+        usernameError.textContent = 'Username or email is required';
+        usernameError.classList.add('show');
+        isValid = false;
+    } else if (username.value.trim().length < 3) {
+        username.classList.add('input-error');
+        usernameError.textContent = 'Username must be at least 3 characters';
+        usernameError.classList.add('show');
+        isValid = false;
+    }
+
+    // pass
+    if (password.value === '') {
+        password.classList.add('input-error');
+        passwordError.textContent = 'Password is required';
+        passwordError.classList.add('show');
+        isValid = false;
+    } else if (password.value.length < 6) {
+        password.classList.add('input-error');
+        passwordError.textContent = 'Password must be at least 6 characters';
+        passwordError.classList.add('show');
+        isValid = false;
+    }
+
+    if (isValid) {
+        successMessage.classList.add('show');
+
+        username.value = '';
+        password.value = '';
+
+        setTimeout(function() {
+            window.location.href = 'home.html';
+        }, 2000);
+
+        return false;
+    }
+
+    return false;
+}
+
+document.getElementById('username').addEventListener('input', function() {
+    if (this.value.trim() !== '') {
+        this.classList.remove('input-error');
+        document.getElementById('usernameError').classList.remove('show');
+    }
+});
+
+document.getElementById('password').addEventListener('input', function() {
+    if (this.value.length >= 6) {
+        this.classList.remove('input-error');
+        document.getElementById('passwordError').classList.remove('show');
+    }
+});
+</script>
+
+</body>
+</html>
