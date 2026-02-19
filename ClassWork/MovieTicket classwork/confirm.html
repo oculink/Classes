@@ -1,0 +1,107 @@
+<html>
+<head>
+<style>
+body {
+    margin: 0;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* BACKGROUND */
+.hero {
+    height: 100vh;
+    background: url("cinema.png");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* NAVBAR — EXACTLY AS YOUR CODE */
+.nav-links {
+    position: absolute;
+    top: 70px;
+    right: 60px;
+}
+
+.nav-links a {
+    color: #fff500;
+    text-decoration: none;
+    margin-left: 30px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    color: #573f00;
+}
+
+
+.form-container{
+    background-color:#6b4a00;
+    padding:40px;
+    border-radius:25px;
+    width:450px;
+    color:#5f4100;
+}
+
+.form-container h2{
+    color:#ffffff;
+    margin-top:0;
+}
+
+
+.section-label {
+    display: block;
+    color: #ffe082;
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* Home button */
+.btn-book {
+    width: 40%;
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px;
+    background: #c9a227;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #2e2200;
+}
+
+.btn-book:hover {
+    background: #fff500;
+}
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="buyticket.html">Buy Ticket</a>
+        <a href="prices.html">Prices</a>
+        <a href="login.html">Login</a>
+    </div>
+    <div class="form-container">
+        <h2><pre>            Booking succesful!</pre></h2>
+
+        <form action="home.html">
+
+            <button type="submit" class="btn-book">Return to Main Menu</button>
+        </form>
+    </div>
+
+</div>
+
+</body>
+</html>
+
