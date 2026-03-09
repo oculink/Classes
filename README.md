@@ -9,6 +9,7 @@ This is just archives for my class work, you can check or mess around with it. I
 ## Languages that I'm learning
 
 - Python
+- PHP
 - C
 - C#
 - Java
