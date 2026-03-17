@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | KDEB Waste Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">KDEBWM</a>
+            
+            <nav class="nav" id="mainNav">
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="services.html" class="nav__link nav__link--active">Services</a>
+                <a href="report.html" class="nav__link">Report</a>
+                <a href="recycling.html" class="nav__link">Recycling</a>
+                <a href="about.html" class="nav__link">About</a>
+            </nav>
+            
+            <div class="header__actions">
+                <button class="lang-toggle">BM / EN</button>
+                <button class="emergency-btn">🚨 Emergency</button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Services</h1>
+            <p>Comprehensive waste management solutions tailored to your needs</p>
+        </div>
+    </section>
+
+    <!-- SERVICE CATEGORIES -->
+    <section class="section">
+        <div class="container">
+            <div class="service-tabs">
+                <button class="service-tab service-tab--active" data-service="residential">
+                    🏘️ Residential
+                </button>
+                <button class="service-tab" data-service="commercial">
+                    🏢 Commercial
+                </button>
+                <button class="service-tab" data-service="bulk">
+                    📦 Bulk Waste
+                </button>
+                <button class="service-tab" data-service="recycling">
+                    ♻️ Recycling
+                </button>
+            </div>
+
+            <!-- RESIDENTIAL SERVICE -->
+            <div class="service-content service-content--active" id="residential">
+                <div class="service-detail">
+                    <div class="service-detail__image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #2D6A4F 0%, #52B788 100%); height: 400px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem;">
+                            🏘️
+                        </div>
+                    </div>
+                    <div class="service-detail__info">
+                        <h2>Residential Waste Collection</h2>
+                        <p class="service-intro">Door-to-door collection service for households across 12 municipal councils in Selangor. Professional, reliable, and environmentally responsible.</p>
+                        
+                        <div class="feature-grid">
+                            <div class="feature-item">
+                                <div class="feature-item__icon">📅</div>
+                                <h4>Scheduled Collection</h4>
+                                <p>Regular daily pickups based on your area's schedule</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-item__icon">🚛</div>
+                                <h4>GPS-Tracked Trucks</h4>
+                                <p>Real-time vehicle tracking for transparency</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-item__icon">♻️</div>
+                                <h4>Separation Support</h4>
+                                <p>Guidance on recyclable materials separation</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-item__icon">🌱</div>
+                                <h4>Eco-Friendly</h4>
+                                <p>Reduced emissions fleet with green technology</p>
+                            </div>
+                        </div>
+                        
+                        <div class="service-pricing">
+                            <h3>Coverage Areas</h3>
+                            <div class="coverage-list">
+                                <span class="coverage-badge">Petaling Jaya</span>
+                                <span class="coverage-badge">Shah Alam</span>
+                                <span class="coverage-badge">Subang Jaya</span>
+                                <span class="coverage-badge">Ampang Jaya</span>
+                                <span class="coverage-badge">Klang</span>
+                                <span class="coverage-badge">Sepang</span>
+                                <span class="coverage-badge">Hulu Selangor</span>
+                                <span class="coverage-badge">Kuala Selangor</span>
+                                <span class="coverage-badge">+4 More</span>
+                            </div>
+                        </div>
+                        
+                        <div class="service-actions">
+                            <a href="#schedule" class="btn btn--primary">View Collection Schedule</a>
+                            <a href="report.html" class="btn btn--secondary">Report Issue</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- SCHEDULE LOOKUP -->
+                <div class="schedule-lookup" id="schedule">
+                    <h3>Find Your Collection Schedule</h3>
+                    <p>Enter your postcode or select your area to view collection days</p>
+                    
+                    <div class="schedule-form">
+                        <input type="text" class="form-input" placeholder="Enter postcode (e.g., 47300)" id="postcodeInput">
+                        <button class="btn btn--primary">Search Schedule</button>
+                    </div>
+                    
+                    <div class="schedule-result" style="display: none;" id="scheduleResult">
+                        <div class="schedule-card">
+                            <h4>📍 Petaling Jaya (Zone 3)</h4>
+                            <div class="schedule-days">
+                                <div class="schedule-day">
+                                    <strong>General Waste</strong>
+                                    <p>Monday, Wednesday, Friday</p>
+                                    <span class="schedule-time">6:00 AM - 10:00 AM</span>
+                                </div>
+                                <div class="schedule-day">
+                                    <strong>Recyclables</strong>
+                                    <p>Tuesday</p>
+                                    <span class="schedule-time">7:00 AM - 11:00 AM</span>
+                                </div>
+                                <div class="schedule-day">
+                                    <strong>Bulk Waste</strong>
+                                    <p>First Saturday of month</p>
+                                    <span class="schedule-time">By appointment</span>
+                                </div>
+                            </div>
+                            <button class="btn btn--secondary">Download as PDF</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COMMERCIAL SERVICE -->
+            <div class="service-content" id="commercial">
+                <div class="service-detail">
+                    <div class="service-detail__image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #1B4965 0%, #52B788 100%); height: 400px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem;">
+                            🏢
+                        </div>
+                    </div>
+                    <div class="service-detail__info">
+                        <h2>Commercial & Industrial Services</h2>
+                        <p class="service-intro">Specialized waste management for businesses, industries, and institutions. Customized solutions to meet your operational needs.</p>
+                        
+                        <div class="commercial-types">
+                            <div class="commercial-card">
+                                <h4>🏪 Retail & Restaurants</h4>
+                                <ul>
+                                    <li>Daily collection services</li>
+                                    <li>Food waste management</li>
+                                    <li>Grease trap cleaning</li>
+                                    <li>Compliance documentation</li>
+                                </ul>
+                            </div>
+                            <div class="commercial-card">
+                                <h4>🏭 Industrial Facilities</h4>
+                                <ul>
+                                    <li>Bulk container rental</li>
+                                    <li>Hazardous waste handling</li>
+                                    <li>Scheduled pickups</li>
+                                    <li>Waste audit services</li>
+                                </ul>
+                            </div>
+                            <div class="commercial-card">
+                                <h4>🏫 Institutions</h4>
+                                <ul>
+                                    <li>Schools & universities</li>
+                                    <li>Hospitals & clinics</li>
+                                    <li>Government buildings</li>
+                                    <li>Shopping complexes</li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="service-pricing">
+                            <h3>Pricing Packages</h3>
+                            <div class="pricing-grid">
+                                <div class="pricing-card">
+                                    <h4>Basic</h4>
+                                    <div class="pricing-amount">RM 150<span>/month</span></div>
+                                    <ul>
+                                        <li>✓ 1x weekly collection</li>
+                                        <li>✓ 240L bin provided</li>
+                                        <li>✓ Basic reporting</li>
+                                    </ul>
+                                    <button class="btn btn--secondary">Select Plan</button>
+                                </div>
+                                <div class="pricing-card pricing-card--featured">
+                                    <div class="pricing-badge">Popular</div>
+                                    <h4>Professional</h4>
+                                    <div class="pricing-amount">RM 350<span>/month</span></div>
+                                    <ul>
+                                        <li>✓ 3x weekly collection</li>
+                                        <li>✓ 660L bin provided</li>
+                                        <li>✓ Priority support</li>
+                                        <li>✓ Monthly reports</li>
+                                    </ul>
+                                    <button class="btn btn--primary">Select Plan</button>
+                                </div>
+                                <div class="pricing-card">
+                                    <h4>Enterprise</h4>
+                                    <div class="pricing-amount">Custom</div>
+                                    <ul>
+                                        <li>✓ Daily collection</li>
+                                        <li>✓ Multiple containers</li>
+                                        <li>✓ Dedicated account manager</li>
+                                        <li>✓ Custom solutions</li>
+                                    </ul>
+                                    <button class="btn btn--secondary">Contact Sales</button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="service-actions">
+                            <a href="#apply" class="btn btn--primary">Apply Online</a>
+                            <a href="about.html#contact" class="btn btn--secondary">Get Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BULK WASTE SERVICE -->
+            <div class="service-content" id="bulk">
+                <div class="service-detail">
+                    <div class="service-detail__image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #F77F00 0%, #FFB703 100%); height: 400px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem;">
+                            📦
+                        </div>
+                    </div>
+                    <div class="service-detail__info">
+                        <h2>Bulk Waste Pickup</h2>
+                        <p class="service-intro">Special collection service for large items and construction debris. Schedule pickup online or via phone.</p>
+                        
+                        <div class="bulk-categories">
+                            <h3>What We Collect</h3>
+                            <div class="bulk-grid">
+                                <div class="bulk-item">
+                                    <div class="bulk-item__icon">🪑</div>
+                                    <h4>Furniture</h4>
+                                    <p>Sofas, tables, chairs, cabinets, mattresses</p>
+                                </div>
+                                <div class="bulk-item">
+                                    <div class="bulk-item__icon">📺</div>
+                                    <h4>Electronics</h4>
+                                    <p>TVs, refrigerators, washing machines</p>
+                                </div>
+                                <div class="bulk-item">
+                                    <div class="bulk-item__icon">🌳</div>
+                                    <h4>Garden Waste</h4>
+                                    <p>Tree branches, grass clippings, leaves</p>
+                                </div>
+                                <div class="bulk-item">
+                                    <div class="bulk-item__icon">🏗️</div>
+                                    <h4>Construction</h4>
+                                    <p>Renovation debris, tiles, wood scraps</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="process-section">
+                            <h3>How It Works</h3>
+                            <div class="process-steps">
+                                <div class="process-step">
+                                    <div class="process-step__number">1</div>
+                                    <h4>Submit Request</h4>
+                                    <p>Fill online form or call hotline</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="process-step__number">2</div>
+                                    <h4>Get Quote</h4>
+                                    <p>Receive pricing based on items</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="process-step__number">3</div>
+                                    <h4>Schedule Pickup</h4>
+                                    <p>Choose convenient date & time</p>
+                                </div>
+                                <div class="process-step">
+                                    <div class="process-step__number">4</div>
+                                    <h4>Collection</h4>
+                                    <p>Our team handles everything</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="service-actions">
+                            <a href="#request" class="btn btn--primary">Request Pickup</a>
+                            <a href="#" class="btn btn--secondary">View Pricing Guide</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RECYCLING SERVICE -->
+            <div class="service-content" id="recycling">
+                <div class="service-detail">
+                    <div class="service-detail__image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #52B788 0%, #2D6A4F 100%); height: 400px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 5rem;">
+                            ♻️
+                        </div>
+                    </div>
+                    <div class="service-detail__info">
+                        <h2>Recycling Programs</h2>
+                        <p class="service-intro">Join our circular economy initiative. Separate recyclables and contribute to a sustainable future.</p>
+                        
+                        <div class="recycling-guide">
+                            <h3>What Can Be Recycled?</h3>
+                            <div class="recycling-categories">
+                                <div class="recycling-cat">
+                                    <div class="recycling-cat__icon">📄</div>
+                                    <h4>Paper</h4>
+                                    <p>Newspapers, cardboard, office paper, magazines</p>
+                                </div>
+                                <div class="recycling-cat">
+                                    <div class="recycling-cat__icon">🍶</div>
+                                    <h4>Plastic</h4>
+                                    <p>Bottles, containers (Type 1, 2, 5), bags</p>
+                                </div>
+                                <div class="recycling-cat">
+                                    <div class="recycling-cat__icon">🥫</div>
+                                    <h4>Metal</h4>
+                                    <p>Aluminum cans, steel cans, metal containers</p>
+                                </div>
+                                <div class="recycling-cat">
+                                    <div class="recycling-cat__icon">🍾</div>
+                                    <h4>Glass</h4>
+                                    <p>Bottles, jars (all colors)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="service-actions">
+                            <a href="recycling.html" class="btn btn--primary">Find Recycling Center</a>
+                            <a href="#" class="btn btn--secondary">Download Guide</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="section section--gray">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What should I do if my waste wasn't collected?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>If your waste wasn't collected on the scheduled day, please report it through our i-Clean Selangor app, call our hotline at 1800 88 2824, or submit a report on our website. Our team will investigate and arrange for collection within 24 hours.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I request a bulk waste pickup?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You can request bulk waste pickup online through our website or by calling our hotline. Provide details about the items, and we'll give you a quote and schedule a convenient pickup time.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are there any items you don't collect?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We don't collect hazardous materials (chemicals, batteries, medical waste), liquid waste, or certain construction materials. Please contact us for guidance on proper disposal of specialized items.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How can I track the waste collection truck?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Download the i-Clean Selangor app to track collection trucks in real-time using GPS. You'll receive notifications when the truck is approaching your area.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h4>KDEB Waste Management</h4>
+                    <p style="color: rgba(255,255,255,0.7);">Malaysia's Smart Waste Management Company serving Selangor since 2017.</p>
+                    <div class="footer__social">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">X</a>
+                        <a href="#" class="social-icon">in</a>
+                        <a href="#" class="social-icon">▶</a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html" class="footer__link">Home</a>
+                    <a href="services.html" class="footer__link">Services</a>
+                    <a href="report.html" class="footer__link">Report Issue</a>
+                    <a href="recycling.html" class="footer__link">Recycling</a>
+                    <a href="about.html" class="footer__link">About Us</a>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Services</h4>
+                    <a href="services.html#residential" class="footer__link">Residential Collection</a>
+                    <a href="services.html#commercial" class="footer__link">Commercial Services</a>
+                    <a href="services.html#recycling" class="footer__link">Recycling Programs</a>
+                    <a href="recycling.html#wte" class="footer__link">Waste-to-Energy</a>
+                    <a href="services.html#bulk" class="footer__link">Bulk Waste Pickup</a>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Contact</h4>
+                    <p style="color: rgba(255,255,255,0.7);">
+                        <strong>Hotline:</strong> 1800 88 2824<br>
+                        <strong>Mobile:</strong> 019 375 9592<br>
+                        <strong>Email:</strong> info@kdebwm.com<br>
+                        <strong>Hours:</strong> 24/7 Emergency Support
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 KDEB Waste Management Sdn Bhd. All rights reserved.</p>
+                <p>Design by [Your Name] | GMI Creative Multimedia CRM1953</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Service tabs
+        const serviceTabs = document.querySelectorAll('.service-tab');
+        const serviceContents = document.querySelectorAll('.service-content');
+        
+        serviceTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const serviceId = tab.getAttribute('data-service');
+                
+                serviceTabs.forEach(t => t.classList.remove('service-tab--active'));
+                serviceContents.forEach(c => c.classList.remove('service-content--active'));
+                
+                tab.classList.add('service-tab--active');
+                document.getElementById(serviceId).classList.add('service-content--active');
+            });
+        });
+        
+        // Schedule search
+        const postcodeInput = document.getElementById('postcodeInput');
+        const scheduleResult = document.getElementById('scheduleResult');
+        
+        document.querySelector('.schedule-form .btn').addEventListener('click', () => {
+            if (postcodeInput.value) {
+                scheduleResult.style.display = 'block';
+                scheduleResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        });
+        
+        // FAQ accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isOpen = faqItem.classList.contains('faq-item--open');
+                
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('faq-item--open');
+                });
+                
+                if (!isOpen) {
+                    faqItem.classList.add('faq-item--open');
+                }
+            });
+        });
+    </script>
+
+    <style>
+        /* Page-specific styles */
+        .page-header {
+            background: linear-gradient(135deg, #2D6A4F 0%, #52B788 100%);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+        
+        .page-header p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+        }
+        
+        .service-tabs {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .service-tab {
+            padding: 16px 32px;
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+        
+        .service-tab:hover {
+            border-color: var(--primary-green);
+            transform: translateY(-2px);
+        }
+        
+        .service-tab--active {
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+        
+        .service-content {
+            display: none;
+        }
+        
+        .service-content--active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 48px;
+            margin-bottom: 64px;
+        }
+        
+        .service-intro {
+            font-size: 1.125rem;
+            color: var(--dark-gray);
+            margin-bottom: 32px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .feature-item {
+            padding: 20px;
+            background: var(--light-gray);
+            border-radius: 12px;
+        }
+        
+        .feature-item__icon {
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        
+        .feature-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+        }
+        
+        .coverage-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 16px;
+        }
+        
+        .coverage-badge {
+            padding: 8px 16px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        .service-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        
+        .schedule-lookup {
+            background: var(--light-gray);
+            padding: 48px;
+            border-radius: 16px;
+            text-align: center;
+        }
+        
+        .schedule-form {
+            display: flex;
+            gap: 16px;
+            max-width: 600px;
+            margin: 24px auto;
+        }
+        
+        .schedule-form input {
+            flex: 1;
+        }
+        
+        .schedule-result {
+            margin-top: 32px;
+        }
+        
+        .schedule-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        
+        .schedule-days {
+            display: grid;
+            gap: 16px;
+            margin: 24px 0;
+        }
+        
+        .schedule-day {
+            padding: 16px;
+            background: var(--light-gray);
+            border-radius: 8px;
+        }
+        
+        .schedule-day strong {
+            display: block;
+            color: var(--primary-green);
+            margin-bottom: 4px;
+        }
+        
+        .schedule-time {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+        
+        .commercial-types {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .commercial-card {
+            background: var(--light-gray);
+            padding: 24px;
+            border-radius: 12px;
+        }
+        
+        .commercial-card ul {
+            list-style: none;
+            margin-top: 16px;
+        }
+        
+        .commercial-card li {
+            padding: 6px 0;
+            font-size: 0.95rem;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+        
+        .pricing-card {
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 16px;
+            padding: 32px;
+            text-align: center;
+            position: relative;
+            transition: all 0.2s;
+        }
+        
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        .pricing-card--featured {
+            border-color: var(--primary-green);
+            box-shadow: 0 4px 12px rgba(45, 106, 79, 0.2);
+        }
+        
+        .pricing-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 4px 16px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .pricing-amount {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            margin: 24px 0;
+        }
+        
+        .pricing-amount span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--gray);
+        }
+        
+        .pricing-card ul {
+            list-style: none;
+            margin: 24px 0;
+            text-align: left;
+        }
+        
+        .pricing-card li {
+            padding: 8px 0;
+        }
+        
+        .bulk-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+        
+        .bulk-item {
+            text-align: center;
+            padding: 24px;
+            background: var(--light-gray);
+            border-radius: 12px;
+        }
+        
+        .bulk-item__icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+        
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+        
+        .process-step {
+            text-align: center;
+        }
+        
+        .process-step__number {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-green);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 16px;
+        }
+        
+        .recycling-categories {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+            margin-top: 24px;
+        }
+        
+        .recycling-cat {
+            text-align: center;
+            padding: 24px;
+            background: var(--light-gray);
+            border-radius: 12px;
+        }
+        
+        .recycling-cat__icon {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+        
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 24px;
+            background: none;
+            border: none;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-icon {
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        
+        .faq-item--open .faq-icon {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+        }
+        
+        .faq-item--open .faq-answer {
+            max-height: 500px;
+        }
+        
+        .faq-answer p {
+            padding: 0 24px 24px;
+            color: var(--dark-gray);
+        }
+        
+        @media (max-width: 768px) {
+            .service-detail {
+                grid-template-columns: 1fr;
+            }
+            
+            .feature-grid,
+            .commercial-types,
+            .pricing-grid,
+            .bulk-grid,
+            .process-steps,
+            .recycling-categories {
+                grid-template-columns: 1fr;
+            }
+            
+            .schedule-form {
+                flex-direction: column;
+            }
+        }
+    </style>
+</body>
+</html>

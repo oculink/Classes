@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report & Track | KDEB Waste Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">KDEBWM</a>
+            
+            <nav class="nav" id="mainNav">
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="services.html" class="nav__link">Services</a>
+                <a href="report.html" class="nav__link nav__link--active">Report</a>
+                <a href="recycling.html" class="nav__link">Recycling</a>
+                <a href="about.html" class="nav__link">About</a>
+            </nav>
+            
+            <div class="header__actions">
+                <button class="lang-toggle">BM / EN</button>
+                <button class="emergency-btn">🚨 Emergency</button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Report an Issue</h1>
+            <p>Quick and easy reporting for all waste management concerns</p>
+        </div>
+    </section>
+
+    <!-- REPORT OPTIONS -->
+    <section class="section">
+        <div class="container">
+            <div class="report-tabs">
+                <button class="report-tab report-tab--active" data-tab="report">
+                    📝 Submit New Report
+                </button>
+                <button class="report-tab" data-tab="track">
+                    🔍 Track Existing Report
+                </button>
+            </div>
+
+            <!-- SUBMIT REPORT FORM -->
+            <div class="tab-content tab-content--active" id="reportTab">
+                <div class="report-container">
+                    <div class="report-sidebar">
+                        <h3>Select Issue Type</h3>
+                        <div class="issue-types">
+                            <button class="issue-type issue-type--active" data-issue="missed">
+                                <span class="issue-type__icon">🚛</span>
+                                <span class="issue-type__label">Missed Collection</span>
+                            </button>
+                            <button class="issue-type" data-issue="illegal">
+                                <span class="issue-type__icon">⚠️</span>
+                                <span class="issue-type__label">Illegal Dumping</span>
+                            </button>
+                            <button class="issue-type" data-issue="damaged">
+                                <span class="issue-type__icon">🗑️</span>
+                                <span class="issue-type__label">Damaged Bin</span>
+                            </button>
+                            <button class="issue-type" data-issue="overflowing">
+                                <span class="issue-type__icon">📦</span>
+                                <span class="issue-type__label">Overflowing Waste</span>
+                            </button>
+                            <button class="issue-type" data-issue="schedule">
+                                <span class="issue-type__icon">📅</span>
+                                <span class="issue-type__label">Schedule Query</span>
+                            </button>
+                            <button class="issue-type" data-issue="other">
+                                <span class="issue-type__icon">💬</span>
+                                <span class="issue-type__label">Other Issues</span>
+                            </button>
+                        </div>
+                        
+                        <div class="response-time">
+                            <div class="response-time__icon">⏱️</div>
+                            <div class="response-time__info">
+                                <strong>Expected Response Time</strong>
+                                <p>24-48 hours for standard issues<br>
+                                4-6 hours for urgent cases</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="report-form-container">
+                        <h2 id="issueTitle">Report Missed Collection</h2>
+                        <p class="form-intro">Please provide details about your issue. Include as much information as possible to help us resolve it quickly.</p>
+                        
+                        <form class="report-form" id="reportForm">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Full Name *</label>
+                                    <input type="text" class="form-input" placeholder="Enter your full name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Contact Number *</label>
+                                    <input type="tel" class="form-input" placeholder="e.g., 012-345-6789" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label">Email Address</label>
+                                    <input type="email" class="form-input" placeholder="your.email@example.com">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">Postcode *</label>
+                                    <input type="text" class="form-input" placeholder="e.g., 47300" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Full Address *</label>
+                                <input type="text" class="form-input" placeholder="Street address, area, city" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Location on Map</label>
+                                <div class="map-picker">
+                                    <div class="map-placeholder">
+                                        <span>📍</span>
+                                        <p>Click to select location on map</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Issue Description *</label>
+                                <textarea class="form-textarea" placeholder="Describe the issue in detail..." required></textarea>
+                                <small style="color: var(--gray);">Minimum 20 characters</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Upload Photos (Optional)</label>
+                                <div class="file-upload">
+                                    <input type="file" id="fileInput" accept="image/*" multiple hidden>
+                                    <button type="button" class="file-upload-btn" onclick="document.getElementById('fileInput').click()">
+                                        📷 Choose Photos
+                                    </button>
+                                    <div class="file-upload-info">
+                                        <p>Upload up to 3 photos (max 5MB each)</p>
+                                        <div id="filePreview"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Priority Level</label>
+                                <select class="form-select">
+                                    <option value="normal">Normal (24-48 hours response)</option>
+                                    <option value="high">High (12-24 hours response)</option>
+                                    <option value="urgent">Urgent (4-6 hours response)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn--primary btn--large">
+                                    Submit Report
+                                </button>
+                                <button type="reset" class="btn btn--secondary">
+                                    Clear Form
+                                </button>
+                            </div>
+                        </form>
+                        
+                        <!-- Success Message (hidden by default) -->
+                        <div class="success-message" id="successMessage" style="display: none;">
+                            <div class="success-message__icon">✅</div>
+                            <h3>Report Submitted Successfully!</h3>
+                            <p>Your report has been received. Here are your tracking details:</p>
+                            <div class="tracking-info">
+                                <div class="tracking-detail">
+                                    <strong>Report ID:</strong>
+                                    <span id="reportId">KDEB-2026-001234</span>
+                                </div>
+                                <div class="tracking-detail">
+                                    <strong>Status:</strong>
+                                    <span class="status-badge status-badge--pending">Under Review</span>
+                                </div>
+                                <div class="tracking-detail">
+                                    <strong>Expected Response:</strong>
+                                    <span>Within 24 hours</span>
+                                </div>
+                            </div>
+                            <p>We'll send updates to your email and phone number. You can also track your report using the ID above.</p>
+                            <button class="btn btn--primary" onclick="document.querySelector('[data-tab=track]').click()">
+                                Track This Report
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRACK REPORT -->
+            <div class="tab-content" id="trackTab">
+                <div class="track-container">
+                    <div class="track-search">
+                        <h2>Track Your Report</h2>
+                        <p>Enter your report ID or reference number to check the status</p>
+                        
+                        <div class="track-form">
+                            <input type="text" class="form-input" placeholder="e.g., KDEB-2026-001234" id="trackingInput">
+                            <button class="btn btn--primary" onclick="showTrackingResult()">
+                                Search
+                            </button>
+                        </div>
+                        
+                        <p style="text-align: center; color: var(--gray); margin-top: 16px;">
+                            Don't have a report ID? Check your email or SMS for the reference number.
+                        </p>
+                    </div>
+                    
+                    <!-- Tracking Result (shown after search) -->
+                    <div class="tracking-result" id="trackingResult" style="display: none;">
+                        <div class="tracking-header">
+                            <div>
+                                <h3>Report Details</h3>
+                                <p class="tracking-id">ID: KDEB-2026-001234</p>
+                            </div>
+                            <div class="status-badge status-badge--progress">In Progress</div>
+                        </div>
+                        
+                        <div class="tracking-info-grid">
+                            <div class="info-item">
+                                <div class="info-label">Issue Type</div>
+                                <div class="info-value">Missed Collection</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Submitted Date</div>
+                                <div class="info-value">March 15, 2026</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Location</div>
+                                <div class="info-value">Petaling Jaya, Zone 3</div>
+                            </div>
+                            <div class="info-item">
+                                <div class="info-label">Priority</div>
+                                <div class="info-value">Normal</div>
+                            </div>
+                        </div>
+                        
+                        <div class="tracking-timeline">
+                            <h4>Status Timeline</h4>
+                            <div class="timeline">
+                                <div class="timeline-item timeline-item--completed">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <strong>Report Submitted</strong>
+                                        <span class="timeline-date">March 15, 2026 - 10:30 AM</span>
+                                        <p>Your report has been received and assigned a tracking number.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item timeline-item--completed">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <strong>Under Review</strong>
+                                        <span class="timeline-date">March 15, 2026 - 11:15 AM</span>
+                                        <p>Our team is reviewing the details of your report.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item timeline-item--active">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <strong>Assigned to Team</strong>
+                                        <span class="timeline-date">March 16, 2026 - 8:00 AM</span>
+                                        <p>The issue has been assigned to our field operations team.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <strong>Resolution in Progress</strong>
+                                        <span class="timeline-date">Pending</span>
+                                        <p>Our team is working to resolve your issue.</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="timeline-marker"></div>
+                                    <div class="timeline-content">
+                                        <strong>Resolved</strong>
+                                        <span class="timeline-date">Pending</span>
+                                        <p>Issue resolved and closed.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="tracking-actions">
+                            <button class="btn btn--secondary">Print Report</button>
+                            <button class="btn btn--secondary">Send to Email</button>
+                            <button class="btn btn--primary">Contact Support</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HELP SECTION -->
+    <section class="section section--gray">
+        <div class="container">
+            <div class="help-cards">
+                <div class="help-card">
+                    <div class="help-card__icon">☎️</div>
+                    <h3>Need Urgent Help?</h3>
+                    <p>Call our 24/7 emergency hotline</p>
+                    <a href="tel:1800882824" class="help-card__link">1800 88 2824</a>
+                </div>
+                <div class="help-card">
+                    <div class="help-card__icon">📱</div>
+                    <h3>Use Our App</h3>
+                    <p>Report and track issues on the go</p>
+                    <a href="#" class="help-card__link">Download i-Clean Selangor</a>
+                </div>
+                <div class="help-card">
+                    <div class="help-card__icon">💬</div>
+                    <h3>Live Chat Support</h3>
+                    <p>Chat with our support team</p>
+                    <a href="#" class="help-card__link">Start Chat</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h4>KDEB Waste Management</h4>
+                    <p style="color: rgba(255,255,255,0.7);">Malaysia's Smart Waste Management Company serving Selangor since 2017.</p>
+                    <div class="footer__social">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">X</a>
+                        <a href="#" class="social-icon">in</a>
+                        <a href="#" class="social-icon">▶</a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html" class="footer__link">Home</a>
+                    <a href="services.html" class="footer__link">Services</a>
+                    <a href="report.html" class="footer__link">Report Issue</a>
+                    <a href="recycling.html" class="footer__link">Recycling</a>
+                    <a href="about.html" class="footer__link">About Us</a>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Services</h4>
+                    <a href="services.html#residential" class="footer__link">Residential Collection</a>
+                    <a href="services.html#commercial" class="footer__link">Commercial Services</a>
+                    <a href="services.html#recycling" class="footer__link">Recycling Programs</a>
+                    <a href="recycling.html#wte" class="footer__link">Waste-to-Energy</a>
+                    <a href="services.html#bulk" class="footer__link">Bulk Waste Pickup</a>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Contact</h4>
+                    <p style="color: rgba(255,255,255,0.7);">
+                        <strong>Hotline:</strong> 1800 88 2824<br>
+                        <strong>Mobile:</strong> 019 375 9592<br>
+                        <strong>Email:</strong> info@kdebwm.com<br>
+                        <strong>Hours:</strong> 24/7 Emergency Support
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 KDEB Waste Management Sdn Bhd. All rights reserved.</p>
+                <p>Design by [Your Name] | GMI Creative Multimedia CRM1953</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Tab switching
+        const reportTabs = document.querySelectorAll('.report-tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        reportTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const tabId = tab.getAttribute('data-tab');
+                
+                reportTabs.forEach(t => t.classList.remove('report-tab--active'));
+                tabContents.forEach(c => c.classList.remove('tab-content--active'));
+                
+                tab.classList.add('report-tab--active');
+                document.getElementById(tabId + 'Tab').classList.add('tab-content--active');
+            });
+        });
+        
+        // Issue type selection
+        const issueTypes = document.querySelectorAll('.issue-type');
+        const issueTitle = document.getElementById('issueTitle');
+        
+        const issueTitles = {
+            'missed': 'Report Missed Collection',
+            'illegal': 'Report Illegal Dumping',
+            'damaged': 'Report Damaged Bin',
+            'overflowing': 'Report Overflowing Waste',
+            'schedule': 'Schedule Inquiry',
+            'other': 'Report Other Issue'
+        };
+        
+        issueTypes.forEach(type => {
+            type.addEventListener('click', () => {
+                issueTypes.forEach(t => t.classList.remove('issue-type--active'));
+                type.classList.add('issue-type--active');
+                const issueType = type.getAttribute('data-issue');
+                issueTitle.textContent = issueTitles[issueType];
+            });
+        });
+        
+        // Form submission
+        document.getElementById('reportForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Hide form, show success message
+            document.getElementById('reportForm').style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+            
+            // Generate random report ID
+            const reportId = 'KDEB-2026-' + Math.floor(Math.random() * 900000 + 100000);
+            document.getElementById('reportId').textContent = reportId;
+            
+            // Scroll to success message
+            document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+        });
+        
+        // File upload preview
+        document.getElementById('fileInput').addEventListener('change', (e) => {
+            const files = e.target.files;
+            const preview = document.getElementById('filePreview');
+            preview.innerHTML = '';
+            
+            for (let i = 0; i < Math.min(files.length, 3); i++) {
+                const file = files[i];
+                const item = document.createElement('div');
+                item.style.cssText = 'display: inline-block; margin: 8px; padding: 8px 12px; background: var(--light-gray); border-radius: 8px; font-size: 0.9rem;';
+                item.textContent = '📎 ' + file.name;
+                preview.appendChild(item);
+            }
+        });
+        
+        // Show tracking result
+        function showTrackingResult() {
+            const input = document.getElementById('trackingInput');
+            if (input.value) {
+                document.getElementById('trackingResult').style.display = 'block';
+                document.getElementById('trackingResult').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+    <style>
+        /* Page-specific styles */
+        .page-header {
+            background: linear-gradient(135deg, #F77F00 0%, #FFB703 100%);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 12px;
+        }
+        
+        .report-tabs {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 48px;
+        }
+        
+        .report-tab {
+            padding: 16px 32px;
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 1rem;
+        }
+        
+        .report-tab--active {
+            background: var(--accent-orange);
+            color: white;
+            border-color: var(--accent-orange);
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content--active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        .report-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 48px;
+        }
+        
+        .issue-types {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+        
+        .issue-type {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px;
+            background: white;
+            border: 2px solid var(--light-gray);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: left;
+        }
+        
+        .issue-type:hover {
+            border-color: var(--accent-orange);
+        }
+        
+        .issue-type--active {
+            background: rgba(247, 127, 0, 0.1);
+            border-color: var(--accent-orange);
+        }
+        
+        .issue-type__icon {
+            font-size: 1.5rem;
+        }
+        
+        .issue-type__label {
+            font-weight: 500;
+        }
+        
+        .response-time {
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            gap: 12px;
+        }
+        
+        .response-time__icon {
+            font-size: 2rem;
+        }
+        
+        .response-time__info strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .response-time__info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin: 0;
+        }
+        
+        .form-intro {
+            color: var(--gray);
+            margin-bottom: 32px;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        
+        .map-picker {
+            margin-top: 8px;
+        }
+        
+        .map-placeholder {
+            height: 200px;
+            background: var(--light-gray);
+            border: 2px dashed var(--gray);
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .map-placeholder:hover {
+            border-color: var(--primary-green);
+            background: rgba(45, 106, 79, 0.05);
+        }
+        
+        .map-placeholder span {
+            font-size: 3rem;
+            margin-bottom: 8px;
+        }
+        
+        .file-upload-btn {
+            padding: 12px 24px;
+            background: var(--light-gray);
+            border: 2px solid var(--gray);
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        
+        .file-upload-btn:hover {
+            background: var(--primary-green);
+            color: white;
+            border-color: var(--primary-green);
+        }
+        
+        .file-upload-info {
+            margin-top: 12px;
+        }
+        
+        .file-upload-info p {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .form-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 32px;
+        }
+        
+        .success-message {
+            background: white;
+            padding: 48px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .success-message__icon {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+        
+        .tracking-info {
+            background: var(--light-gray);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+        
+        .tracking-detail {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--white);
+        }
+        
+        .tracking-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .status-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        .status-badge--pending {
+            background: rgba(255, 183, 3, 0.2);
+            color: var(--accent-yellow);
+        }
+        
+        .status-badge--progress {
+            background: rgba(27, 73, 101, 0.2);
+            color: var(--secondary-blue);
+        }
+        
+        .status-badge--resolved {
+            background: rgba(82, 183, 136, 0.2);
+            color: var(--success);
+        }
+        
+        .track-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .track-search {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        
+        .track-form {
+            display: flex;
+            gap: 16px;
+            max-width: 600px;
+            margin: 24px auto;
+        }
+        
+        .track-form input {
+            flex: 1;
+        }
+        
+        .tracking-result {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .tracking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 32px;
+            padding-bottom: 24px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .tracking-id {
+            color: var(--gray);
+            font-family: monospace;
+        }
+        
+        .tracking-info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+        
+        .info-item {
+            padding: 16px;
+            background: var(--light-gray);
+            border-radius: 8px;
+        }
+        
+        .info-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 4px;
+        }
+        
+        .info-value {
+            font-weight: 600;
+            font-size: 1.05rem;
+        }
+        
+        .tracking-timeline {
+            margin: 32px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 11px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--light-gray);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 32px;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: -40px;
+            width: 24px;
+            height: 24px;
+            background: white;
+            border: 3px solid var(--light-gray);
+            border-radius: 50%;
+        }
+        
+        .timeline-item--completed .timeline-marker {
+            background: var(--success);
+            border-color: var(--success);
+        }
+        
+        .timeline-item--active .timeline-marker {
+            background: var(--accent-orange);
+            border-color: var(--accent-orange);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .timeline-content strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .timeline-date {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+        
+        .timeline-content p {
+            font-size: 0.95rem;
+            color: var(--dark-gray);
+            margin: 0;
+        }
+        
+        .tracking-actions {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-top: 32px;
+        }
+        
+        .help-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        .help-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            transition: all 0.2s;
+        }
+        
+        .help-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        .help-card__icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+        
+        .help-card h3 {
+            margin-bottom: 8px;
+        }
+        
+        .help-card p {
+            color: var(--gray);
+            margin-bottom: 16px;
+        }
+        
+        .help-card__link {
+            color: var(--primary-green);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .report-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .report-sidebar {
+                order: 1;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .tracking-info-grid,
+            .help-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

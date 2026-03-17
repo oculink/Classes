@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDEB Waste Management | Selangor's Trusted Waste Solution</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header__container">
+            <a href="index.html" class="header__logo">KDEBWM</a>
+            
+            <nav class="nav" id="mainNav">
+                <a href="index.html" class="nav__link nav__link--active">Home</a>
+                <a href="services.html" class="nav__link">Services</a>
+                <a href="report.html" class="nav__link">Report</a>
+                <a href="recycling.html" class="nav__link">Recycling</a>
+                <a href="about.html" class="nav__link">About</a>
+            </nav>
+            
+            <div class="header__actions">
+                <button class="lang-toggle">BM / EN</button>
+                <button class="emergency-btn">🚨 Emergency</button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero__content">
+                <h1 class="hero__title">Keeping Selangor Clean & Green</h1>
+                <p class="hero__subtitle">Professional waste management services for a sustainable future. Report issues, schedule pickups, and track collections in real-time.</p>
+                
+                <div class="hero__actions">
+                    <a href="report.html" class="btn btn--primary btn--large btn--icon">
+                        📝 Report an Issue
+                    </a>
+                    <a href="services.html" class="btn btn--secondary btn--large">
+                        View Services
+                    </a>
+                </div>
+                
+                <div class="hero__stats">
+                    <div class="stat-item">
+                        <div class="stat-item__number">12</div>
+                        <div class="stat-item__label">Municipal Councils</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number">3,500+</div>
+                        <div class="stat-item__label">Daily Tons Collected</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-item__number">1,200+</div>
+                        <div class="stat-item__label">Fleet Vehicles</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUICK ACTIONS -->
+    <section class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">What Can We Help You With?</h2>
+                <p class="section__subtitle">Quick access to our most popular services</p>
+            </div>
+            
+            <div class="grid grid--3">
+                <div class="card">
+                    <div class="card__icon">📍</div>
+                    <h3 class="card__title">Find Collection Schedule</h3>
+                    <p class="card__description">Check when waste will be collected in your area based on your location.</p>
+                    <a href="services.html#schedule" class="btn btn--secondary mt-3">View Schedule</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card__icon">🚛</div>
+                    <h3 class="card__title">Track Your Pickup</h3>
+                    <p class="card__description">Real-time tracking of collection trucks in your neighborhood.</p>
+                    <a href="report.html#track" class="btn btn--secondary mt-3">Track Now</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card__icon">♻️</div>
+                    <h3 class="card__title">Locate Recycling Center</h3>
+                    <p class="card__description">Find the nearest recycling facility and learn what materials we accept.</p>
+                    <a href="recycling.html" class="btn btn--secondary mt-3">Find Center</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card__icon">🏢</div>
+                    <h3 class="card__title">Commercial Services</h3>
+                    <p class="card__description">Specialized waste collection for businesses, industries, and institutions.</p>
+                    <a href="services.html#commercial" class="btn btn--secondary mt-3">Learn More</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card__icon">📱</div>
+                    <h3 class="card__title">Download App</h3>
+                    <p class="card__description">i-Clean Selangor app for easy reporting and real-time notifications.</p>
+                    <a href="#app" class="btn btn--secondary mt-3">Get App</a>
+                </div>
+                
+                <div class="card">
+                    <div class="card__icon">💬</div>
+                    <h3 class="card__title">Contact Support</h3>
+                    <p class="card__description">Reach our customer service team via phone, email, or live chat.</p>
+                    <a href="about.html#contact" class="btn btn--secondary mt-3">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES OVERVIEW -->
+    <section class="section section--gray">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Our Services</h2>
+                <p class="section__subtitle">Comprehensive waste management solutions for Selangor</p>
+            </div>
+            
+            <div class="services-showcase">
+                <div class="service-feature">
+                    <div class="service-feature__image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #2D6A4F 0%, #52B788 100%); height: 300px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                            🏘️
+                        </div>
+                    </div>
+                    <div class="service-feature__content">
+                        <h3>Residential Waste Collection</h3>
+                        <p>Door-to-door collection service for households across 12 municipal councils in Selangor. Scheduled pickups, bulk waste removal, and special collections.</p>
+                        <ul class="feature-list">
+                            <li>✓ Daily collection schedules</li>
+                            <li>✓ Bulk waste pickup on request</li>
+                            <li>✓ Recyclable materials separation</li>
+                            <li>✓ GPS-tracked trucks</li>
+                        </ul>
+                        <a href="services.html" class="btn btn--primary mt-3">Learn More</a>
+                    </div>
+                </div>
+                
+                <div class="service-feature service-feature--reverse">
+                    <div class="service-feature__image">
+                        <div class="placeholder-img" style="background: linear-gradient(135deg, #1B4965 0%, #52B788 100%); height: 300px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 4rem;">
+                            ⚡
+                        </div>
+                    </div>
+                    <div class="service-feature__content">
+                        <h3>Waste-to-Energy Technology</h3>
+                        <p>Converting waste into clean energy at our state-of-the-art Sultan Idris Shah Green Energy Plant. Reducing landfill dependency while generating electricity.</p>
+                        <ul class="feature-list">
+                            <li>✓ 1,500 tons per day capacity</li>
+                            <li>✓ 30 MW power generation</li>
+                            <li>✓ Eco-friendly emissions control</li>
+                            <li>✓ Sustainable waste solution</li>
+                        </ul>
+                        <a href="recycling.html#wte" class="btn btn--primary mt-3">Discover WtE</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE STATISTICS -->
+    <section class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Our Impact</h2>
+                <p class="section__subtitle">Real-time data on waste management across Selangor</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-card__icon">🗑️</div>
+                    <div class="stat-card__number">3,500</div>
+                    <div class="stat-card__label">Tons Daily Collection</div>
+                    <div class="stat-card__change">↑ 12% from last month</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card__icon">♻️</div>
+                    <div class="stat-card__number">450</div>
+                    <div class="stat-card__label">Tons Recycled Daily</div>
+                    <div class="stat-card__change stat-card__change--positive">↑ 18% increase</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card__icon">🚛</div>
+                    <div class="stat-card__number">1,200+</div>
+                    <div class="stat-card__label">Active Fleet Vehicles</div>
+                    <div class="stat-card__change">Real-time tracking enabled</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card__icon">⚡</div>
+                    <div class="stat-card__number">30 MW</div>
+                    <div class="stat-card__label">Energy Generated</div>
+                    <div class="stat-card__change stat-card__change--positive">Clean electricity</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card__icon">👥</div>
+                    <div class="stat-card__number">3,000+</div>
+                    <div class="stat-card__label">Dedicated Crew</div>
+                    <div class="stat-card__change">Serving 12 councils</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-card__icon">📉</div>
+                    <div class="stat-card__number">65%</div>
+                    <div class="stat-card__label">Complaint Reduction</div>
+                    <div class="stat-card__change stat-card__change--positive">Year-over-year</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- APP DOWNLOAD CTA -->
+    <section class="section section--gray">
+        <div class="container">
+            <div class="app-cta">
+                <div class="app-cta__content">
+                    <h2>Download i-Clean Selangor</h2>
+                    <p>Report issues, track collections, and stay updated with push notifications. Available on iOS and Android.</p>
+                    <div class="app-cta__buttons">
+                        <a href="#" class="app-store-btn">
+                            <span class="app-store-btn__icon">📱</span>
+                            <span>
+                                <small>Download on the</small>
+                                <strong>App Store</strong>
+                            </span>
+                        </a>
+                        <a href="#" class="app-store-btn">
+                            <span class="app-store-btn__icon">🤖</span>
+                            <span>
+                                <small>Get it on</small>
+                                <strong>Google Play</strong>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="app-cta__image">
+                    <div class="placeholder-img" style="background: linear-gradient(135deg, #2D6A4F 0%, #52B788 100%); height: 400px; border-radius: 16px; display: flex; align-items: center; justify-content: center; color: white; font-size: 6rem;">
+                        📱
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEWS & ALERTS -->
+    <section class="section">
+        <div class="container">
+            <div class="section__header">
+                <h2 class="section__title">Latest Updates</h2>
+                <p class="section__subtitle">Stay informed about service changes and community events</p>
+            </div>
+            
+            <div class="grid grid--3">
+                <div class="news-card">
+                    <div class="news-card__badge news-card__badge--alert">Alert</div>
+                    <div class="news-card__date">March 15, 2026</div>
+                    <h3 class="news-card__title">Temporary Schedule Change</h3>
+                    <p class="news-card__excerpt">Collection in Petaling Jaya Zone 3 delayed by one day due to road maintenance work.</p>
+                    <a href="#" class="news-card__link">Read More →</a>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-card__badge news-card__badge--event">Event</div>
+                    <div class="news-card__date">March 20, 2026</div>
+                    <h3 class="news-card__title">Community Cleanup Drive</h3>
+                    <p class="news-card__excerpt">Join us for a neighborhood cleanup event at Taman Greenpark this Saturday morning.</p>
+                    <a href="#" class="news-card__link">Register Now →</a>
+                </div>
+                
+                <div class="news-card">
+                    <div class="news-card__badge news-card__badge--news">News</div>
+                    <div class="news-card__date">March 10, 2026</div>
+                    <h3 class="news-card__title">New Recycling Facilities</h3>
+                    <p class="news-card__excerpt">Three new recycling centers opened in Shah Alam, expanding our circular economy initiative.</p>
+                    <a href="#" class="news-card__link">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <h4>KDEB Waste Management</h4>
+                    <p style="color: rgba(255,255,255,0.7);">Malaysia's Smart Waste Management Company serving Selangor since 2017.</p>
+                    <div class="footer__social">
+                        <a href="#" class="social-icon">f</a>
+                        <a href="#" class="social-icon">X</a>
+                        <a href="#" class="social-icon">in</a>
+                        <a href="#" class="social-icon">▶</a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Quick Links</h4>
+                    <a href="index.html" class="footer__link">Home</a>
+                    <a href="services.html" class="footer__link">Services</a>
+                    <a href="report.html" class="footer__link">Report Issue</a>
+                    <a href="recycling.html" class="footer__link">Recycling</a>
+                    <a href="about.html" class="footer__link">About Us</a>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Services</h4>
+                    <a href="services.html#residential" class="footer__link">Residential Collection</a>
+                    <a href="services.html#commercial" class="footer__link">Commercial Services</a>
+                    <a href="services.html#recycling" class="footer__link">Recycling Programs</a>
+                    <a href="recycling.html#wte" class="footer__link">Waste-to-Energy</a>
+                    <a href="services.html#bulk" class="footer__link">Bulk Waste Pickup</a>
+                </div>
+                
+                <div class="footer__column">
+                    <h4>Contact</h4>
+                    <p style="color: rgba(255,255,255,0.7);">
+                        <strong>Hotline:</strong> 1800 88 2824<br>
+                        <strong>Mobile:</strong> 019 375 9592<br>
+                        <strong>Email:</strong> info@kdebwm.com<br>
+                        <strong>Hours:</strong> 24/7 Emergency Support
+                    </p>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 KDEB Waste Management Sdn Bhd. All rights reserved.</p>
+                <p>Design by [Your Name] | GMI Creative Multimedia CRM1953</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mainNav = document.getElementById('mainNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && document.querySelector(href)) {
+                    e.preventDefault();
+                    document.querySelector(href).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <style>
+        /* Page-specific styles */
+        .hero {
+            background: linear-gradient(135deg, #2D6A4F 0%, #52B788 100%);
+            color: white;
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            top: -200px;
+            right: -100px;
+        }
+        
+        .hero__content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+        
+        .hero__title {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero__subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 32px;
+            opacity: 0.95;
+        }
+        
+        .hero__actions {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+        
+        .hero__stats {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-item__number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+        }
+        
+        .stat-item__label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .services-showcase {
+            display: flex;
+            flex-direction: column;
+            gap: 64px;
+        }
+        
+        .service-feature {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        .service-feature--reverse {
+            direction: rtl;
+        }
+        
+        .service-feature--reverse > * {
+            direction: ltr;
+        }
+        
+        .service-feature__content h3 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+        
+        .feature-list {
+            list-style: none;
+            margin: 24px 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            font-size: 1.05rem;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            text-align: center;
+            transition: all 0.2s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        .stat-card__icon {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+        
+        .stat-card__number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-green);
+            font-family: var(--font-heading);
+            margin-bottom: 8px;
+        }
+        
+        .stat-card__label {
+            font-size: 1rem;
+            color: var(--dark-gray);
+            margin-bottom: 8px;
+        }
+        
+        .stat-card__change {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .stat-card__change--positive {
+            color: var(--success);
+        }
+        
+        .app-cta {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+        
+        .app-cta__buttons {
+            display: flex;
+            gap: 16px;
+            margin-top: 24px;
+        }
+        
+        .app-store-btn {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 24px;
+            background: var(--black);
+            color: white;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+        
+        .app-store-btn:hover {
+            background: var(--primary-green);
+            transform: translateY(-2px);
+        }
+        
+        .app-store-btn__icon {
+            font-size: 2rem;
+        }
+        
+        .app-store-btn small {
+            display: block;
+            font-size: 0.75rem;
+            opacity: 0.8;
+        }
+        
+        .app-store-btn strong {
+            display: block;
+            font-size: 1.1rem;
+        }
+        
+        .news-card {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.07);
+            position: relative;
+            transition: all 0.2s;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+        
+        .news-card__badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        
+        .news-card__badge--alert {
+            background: rgba(247, 127, 0, 0.1);
+            color: var(--accent-orange);
+        }
+        
+        .news-card__badge--event {
+            background: rgba(45, 106, 79, 0.1);
+            color: var(--primary-green);
+        }
+        
+        .news-card__badge--news {
+            background: rgba(27, 73, 101, 0.1);
+            color: var(--secondary-blue);
+        }
+        
+        .news-card__date {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 8px;
+        }
+        
+        .news-card__title {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+        }
+        
+        .news-card__excerpt {
+            color: var(--dark-gray);
+            margin-bottom: 16px;
+        }
+        
+        .news-card__link {
+            color: var(--primary-green);
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .hero__title {
+                font-size: 2rem;
+            }
+            
+            .hero__subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero__actions {
+                flex-direction: column;
+            }
+            
+            .hero__actions .btn {
+                width: 100%;
+            }
+            
+            .service-feature {
+                grid-template-columns: 1fr;
+            }
+            
+            .app-cta {
+                grid-template-columns: 1fr;
+            }
+            
+            .app-cta__image {
+                order: -1;
+            }
+        }
+    </style>
+</body>
+</html>
